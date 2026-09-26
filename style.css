@@ -1,0 +1,60 @@
+:root{
+  --juniper:#1F3B34; --juniper-2:#2C5249; --sky:#EEF2EF; --paper:#FFFFFF;
+  --gold:#C8912E; --stone:#6B7570; --line:#D5DDD8; --err:#A33A2B;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--sky);color:var(--juniper);font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1.0625rem;line-height:1.55}
+a{color:var(--juniper-2)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.25rem}
+header.top{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.25rem 0;flex-wrap:wrap}
+.brand{font-weight:800;font-size:1.25rem;letter-spacing:-.01em;text-decoration:none;color:var(--juniper)}
+.brokered{font-size:.9rem;color:var(--stone)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:start;padding:2.5rem 0 4rem}
+.hero h1{font-size:clamp(2.4rem,5.5vw,4.25rem);line-height:1.02;letter-spacing:-.03em;font-weight:800;margin:0 0 1.25rem;max-width:12ch}
+.hero p.lede{font-size:1.2rem;max-width:34ch;margin:0 0 1.75rem;color:var(--juniper-2)}
+.points{list-style:none;padding:0;margin:0;display:grid;gap:.75rem;max-width:40ch}
+.points li{padding-left:1.25rem;border-left:3px solid var(--gold)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:1.75rem}
+.card h2{margin:0 0 .25rem;font-size:1.4rem}
+.card .sub{margin:0 0 1.25rem;color:var(--stone);font-size:.95rem}
+label{display:block;font-weight:600;font-size:.95rem;margin:0 0 .35rem}
+.field{margin-bottom:1rem}
+input[type=text],input[type=email],input[type=tel],select,textarea{width:100%;font:inherit;font-size:1rem;padding:.7rem .8rem;border:1px solid #B9C4BE;border-radius:8px;background:#fff;color:var(--juniper)}
+textarea{min-height:90px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.consent{display:grid;grid-template-columns:auto 1fr;gap:.6rem;align-items:start;font-size:.82rem;line-height:1.45;color:#3B4A45;margin:.9rem 0;font-weight:400}
+.consent input{margin-top:.2rem;width:18px;height:18px;accent-color:var(--juniper)}
+.fine{font-size:.78rem;color:var(--stone);line-height:1.45}
+button.cta{width:100%;font:inherit;font-weight:700;font-size:1.05rem;padding:.9rem;border:0;border-radius:8px;background:var(--juniper);color:#fff;cursor:pointer;margin-top:.5rem}
+button.cta:hover{background:var(--juniper-2)}
+.hidden{position:absolute;left:-9999px}
+.ridge{display:block;width:100%;height:auto}
+footer{background:var(--juniper);color:#DCE5E0;padding:2.5rem 0 3rem;font-size:.9rem}
+footer a{color:#fff}
+footer .cols{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem}
+.legal{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:2rem;margin:1rem 0 4rem;max-width:760px}
+.legal h1{font-size:2rem;letter-spacing:-.02em;margin-top:0}
+.legal h2{font-size:1.2rem;margin-top:2rem}
+.legal p,.legal li{max-width:70ch}
+@media (max-width:860px){.hero{grid-template-columns:1fr;gap:2rem}.row{grid-template-columns:1fr}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sky:#15221E;--paper:#1C2C27;--juniper:#E7EEEA;--juniper-2:#C6D6CE;--line:#2F433C;--stone:#9AA8A1}
+ :root:not([data-theme="light"]) input,:root:not([data-theme="light"]) select,:root:not([data-theme="light"]) textarea{background:#12201B;color:#E7EEEA;border-color:#3A5048}
+ :root:not([data-theme="light"]) .consent{color:#C6D6CE}
+ :root:not([data-theme="light"]) button.cta{background:var(--gold);color:#15221E}
+ :root:not([data-theme="light"]) footer{background:#0E1815}}
+.team-logo{display:block;height:56px;width:auto;max-width:220px}
+.broker{display:flex;align-items:center;gap:.75rem;text-align:right}
+.broker-logo{display:block;height:48px;width:auto;max-width:160px}
+@media (max-width:600px){header.top{flex-direction:column;align-items:flex-start}.broker{text-align:left}.team-logo{height:48px}.broker-logo{height:40px}}
+/* Masthead: dark band so the gold/white team logo reads; eXp logo on a white tile */
+.masthead{background:#15241F;color:#E7EEEA}
+.masthead header.top{padding:1rem 0}
+.team-logo{height:72px;max-width:none}
+.broker{gap:1rem}
+.broker .brokered{color:#E7EEEA;font-size:.85rem;line-height:1.35}
+.broker-logo{height:auto;width:112px;max-width:none;background:#fff;padding:.55rem .7rem;border-radius:8px;box-sizing:content-box}
+@media (max-width:600px){.team-logo{height:60px}.broker-logo{width:92px}.masthead header.top{gap:.9rem}}
